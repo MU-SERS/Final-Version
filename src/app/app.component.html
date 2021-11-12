@@ -1,13 +1,16 @@
 <ng-container *ngIf="isLogin; else home">
   <body>    
     <div class="main">
+      <!-- <div id='firebaseui-auth-container'>
+
+      </div> -->
       <h2 id="student">Welcome to SERS</h2>
       <label for="uname"><b>Username: </b></label>
       <input [(ngModel)]="usernameValue" id="username" placeholder="Enter Username" name="uname" required>
-
+      <br>
       <label for="pwd"><b>Password: </b></label>
       <input [(ngModel)]="passwordValue" id="password" type="password" placeholder="Enter Password" name="pwd" required>
-
+      <br>
       <button type="submit" value='login' (click)="login()">Sign In</button>
     </div>
 
@@ -25,11 +28,21 @@
   <main>
       <aside>
           <div class="menuOptions">
-            <button (click)="logout()">Logout</button>
-            <button routerLink="/tickets">Students</button>
-            <button routerLink="/map">Locate</button>
-            <button routerLink="/reports">Reports</button>
-            <button>User</button>
+          <div>
+            <button class="nav-button" routerLink="/tickets">Chats</button>
+          </div>
+          <div>
+            <button class="nav-button" routerLink="/map">Locate</button>
+          </div>
+          <div>
+            <button class="nav-button" routerLink="/reports">Reports</button>
+          </div>
+          <div>
+              <app-user-menu></app-user-menu>
+          </div>
+          <div>
+            <button class="nav-button" (click)="logout()">Logout</button>
+          </div>
           </div>
       </aside>
     

@@ -3,9 +3,20 @@ body, html {
     height: 100%;
     background-color: darkgray;
     margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 div {
     height: 100%;
     width: 100%;
+}
+
+.nav-button {
+    display: block;
+    width: 70px;
+    height: 70px;
+    background-color: whitesmoke;
+    color: black;
+    border: 1px solid black;
+    margin: 20px; 
 }

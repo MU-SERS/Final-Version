@@ -1,17 +1,29 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 // import { report } from 'process';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subscription } from 'rxjs';
+// import { AngularFirestore } from '@angular/fire/compat';
+import { AngularFirestore } from '@angular/fire/compat/firestore'
+import { IsReadService } from '../is-read.service';
+import { query } from '@angular/fire/firestore';
 
 class Student { 
-  id: number = 0;
+  id: string = '';
   name: string = '';
-  phone: string = '';
+  number: string = '';
+  messages: Message[] = [];
 }
 
+
 class Message {
-  timeStamp: string = '';
-  content: string = '';
+  userID: string = '';
+  timeStamp: number = 0;
+  messageBody: string = '';
   incoming: boolean = true;
+  location: string = '';
+}
+
+class Query {
+  search: string = '';
 }
 
 @Component({
@@ -23,31 +35,61 @@ export class TicketsComponent implements OnInit {
 
   studentList: Student[] = [];
 
-  messages: Message[][] = [];
-
-  activeChat: number = 0;
+  activeChat?: string = undefined;
 
   inputValue: string = '';
 
-  constructor() { 
-    var student = new Student();
-    student.id = 1;
-    student.name = 'alex';
-    student.phone = '(123)456-7890';
-    this.studentList.push(student);
+  queryValue: string = '';
 
-    var student2 = new Student();
-    student2.id = 2;
-    student2.name = 'alex2';
-    student2.phone = '(123)456-7890+1';
-    this.studentList.push(student2);
+  userSubscription?: Subscription = void 0;
 
-    var message = new Message(); 
-    message.timeStamp = '10-17-1999';
-    message.incoming = false;
-    message.content = 'My friend is bleeding really badly my lat/long is 38.94,-92.32';
-    this.messages[1] = [];
-    this.messages[1].push(message);
+  constructor(
+    private afs: AngularFirestore,
+    public irs: IsReadService,
+
+  ) { 
+    // this.afs.collection('Users')
+    this.loadStudents();
+
+    this.afs.collection('messages').snapshotChanges().subscribe(data => {
+      this.studentList.forEach(s => s.messages = []);
+      data.forEach(m => {
+        const messageData = <Message>(m.payload.doc.data());
+        this.getStudentById(messageData.userID)?.messages.push(messageData);
+      });
+      this.studentList.forEach(s => s.messages.sort((b,a) => b.timeStamp - a.timeStamp));
+    });
+
+    // this.afs.collection('Users', ref => ref.where('name', '<=', this.queryValue + '\uf8ff').orderBy('name').limit(10));
+
+    // this.afs.collection('search').snapshotChanges().subscribe(data => {
+    //   data.forEach(s => {
+    //     const queryData = <Query>(s.payload.doc.data());
+    //     queryData.search = s.payload.doc.name;
+    //     queryData.search = [];
+    //     this.studentList.push(queryData);
+    //   });
+    // });
+
+    // this.messages = <Message[][]>data;
+    // var student = new Student();
+    // student.id = 'GC4E64NW8d7wiXp6sczp';
+    // student.name = 'User1';
+    // student.phone = '(123)456-7890';
+    // this.studentList.push(student);
+
+    // var student2 = new Student();
+    // student2.id = '2';
+    // student2.name = 'User2';
+    // student2.phone = '(123)456-7890+1';
+    // this.studentList.push(student2);
+
+    // var message = new Message(); 
+    // message.timeStamp = '10-17-1999';
+    // message.incoming = false;
+    // message.content = 'My friend is bleeding really badly my lat/long is 38.94,-92.32';
+    // this.messages[1] = [];
+    // this.messages[1].push(message);
 
     // this._dataService.getReports().subcribe((response) => {
     //   this.tipsList = response.data;
@@ -56,19 +98,79 @@ export class TicketsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
-  openChat(id:number): void {
+  openChat(id: string): void {
     this.activeChat = id;
+    this.irs.readTickets.push(this.activeChat);
   }
 
   sendChat(): void {
-    const newMessage = new Message();
-    newMessage.content = this.inputValue;
-    this.messages[this.activeChat].push(newMessage);
+    const today = new Date();
+
+
+    this.afs.collection('messages').add({
+      messageBody: this.inputValue,
+      timeStamp: new Date().getTime(),
+      userID: <string>this.activeChat,
+      incoming: false,
+    });
+
+
+    // sendQuery(): void {  
+    //   this.afs.collection('search').add({
+    //     search: this.queryValue,
+    //   });
+
+    // const newMessage = new Message();
+    // newMessage.messageBody = this.inputValue;
+    // this.getStudentById(<string>this.activeChat)?.messages.push(newMessage);
+    this.inputValue = '';
   }
 
+  getStudentById(id: string): Student | undefined {
+    return this.studentList.find(s => s.id === id);
+  }
 
+  encodeURIComponent = window.encodeURIComponent;
+
+  formatDate(value: number): string {
+    return new Date(value).toLocaleString();
+  }
+
+  sendQuery() {
+    this.loadStudents();
+  }
+
+  loadStudents() {
+    this.studentList = [];
+    if (this.userSubscription) {
+      this.userSubscription.unsubscribe();
+    }
+
+    this.userSubscription = this.afs.collection('Users', ref => ref
+      .where('name', '<=', this.queryValue + '\uf8ff')
+      .where('name', '>=', this.queryValue)
+      .orderBy('name')
+    ).snapshotChanges().subscribe(data => {
+      data.forEach(s => {
+        const studentData = <Student>(s.payload.doc.data());
+        studentData.id = s.payload.doc.id;
+        studentData.messages = [];
+        this.studentList.push(studentData);
+      });
+      this.afs.collection('messages').snapshotChanges().subscribe(data => {
+        this.studentList.forEach(s => s.messages = []);
+        data.forEach(m => {
+          const messageData = <Message>(m.payload.doc.data());
+          this.getStudentById(messageData.userID)?.messages.push(messageData);
+        });
+        this.studentList.forEach(s => s.messages.sort((b,a) => b.timeStamp - a.timeStamp));
+      });
+    });
+
+  }
 }
 
 

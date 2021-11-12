@@ -9,9 +9,33 @@
         margin-right: .75%; 
         background-color: lightgray; 
         display: block;
+        > div {
+            height: auto;
+            display: flex;
+            margin-right: 4%;
+            button {
+                flex: 0;
+            }
+            input {
+                flex: 1;
+            }
+        }
         > ul {
             padding-left: 0%;
-            margin: 4%;
+            max-height: calc(100% - 30px);
+            overflow-y: auto;
+            margin: 0 4%;
+            
+            button.unvisited {
+                background-color: darkgray;
+            }
+
+            button.active {
+                background-color: goldenrod;
+            }
+            > :first-of-type {
+                margin-top: 4%;
+            }
         }
         .texts {
             border: 1px solid black;
@@ -21,8 +45,8 @@
             list-style-type: none;
             padding-bottom: 4%;
             margin-bottom: 4%;
+        }
     }
-}
     .chat {
         height: 100%;
         > div {
@@ -45,9 +69,20 @@
                 background-color: whitesmoke; 
                 padding-left: 4%;
                 padding-top: 1%;
+                margin-left: 2%;
+                margin-right: 0%;
                 list-style-type: none;
-                padding-bottom: 4%;
+                padding: 4%;
                 margin-bottom: 4%;
+
+                &.recieved {
+                    background-color: darkgray;
+                    margin-right: 2%;
+                    margin-left: 0%;
+                    padding: 4%;
+                    
+                }
+
             }
             > .input {
                 flex: .05;

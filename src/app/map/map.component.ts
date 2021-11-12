@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-map',
@@ -7,13 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
-  constructor() { }
+  constructor(public activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+
+    const location = decodeURIComponent(this.activatedRoute.snapshot.params['location']);
+    let lat = 38.9404;
+    let long = -92.3277;
+
+    if (location) {
+      let latlong = location.split(',');
+      lat = +latlong[0];
+      long = +latlong[1];
+    }
+
     let google = (<any>window).google;
 
     const map = new google.maps.Map(document.getElementById("map"), {
-      center: { lat:38.9404,lng:-92.3277 },
+      center: { lat: lat,lng: long},
       zoom: 16,
       mapTypeId: "roadmap",
     });

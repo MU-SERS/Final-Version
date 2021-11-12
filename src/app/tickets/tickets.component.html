@@ -1,23 +1,37 @@
 <div class="tickets">
+    <div>
+        <input id="queryBox" type="text" [(ngModel)]="queryValue" placeholder="Filter on Username">
+        <button (click)="sendQuery()">Search</button>
+    </div>
     <ul>
-    <li class="texts" *ngFor="let student of studentList">
-        <p>From: {{student.name}}</p>
-        <p>Device: {{student.phone}}</p>
-        <button (click)="openChat(student.id)">Go 2 chat</button>
-      </li>
+        <li class="texts" *ngFor="let student of studentList">
+            <p>From: {{student.name}}</p>
+            <p>Device: {{student.number}}</p>
+            <button
+                [ngClass]="{
+                    'unvisited': irs.readTickets.indexOf(student.id) === -1,
+                    'active': student.id === activeChat
+                }"
+                (click)="openChat(student.id)"
+            >Go 2 chat</button>
+        </li>
     </ul>
 </div>
 
 <div class="chat">
-    <div *ngIf="activeChat > 0">
+    <div *ngIf="activeChat">
         <ul>
-            <li class="chatMessages" *ngFor="let message of messages[activeChat]">
-                <p>{{message.content}}</p>
-                <p style="text-decoration: underline;">Sent at: {{message.timeStamp}}</p>
+            <li class="chatMessages" *ngFor="let message of getStudentById(activeChat)?.messages"
+            [ngClass]="{
+                'recieved': message.incoming
+            }">
+                <p>{{message.messageBody}}</p>
+                <p style="text-decoration: underline;">Sent at: {{formatDate(message.timeStamp)}}</p>
+                <a [routerLink]="'/map/' + encodeURIComponent(message.location)">See Location</a>
             </li>
         </ul>
         <div class="input">
-            <input id="textBox" type="text" [(ngModel)]="inputValue">
+            <input id="textBox" type="text" [(ngModel)]="inputValue" placeholder="Enter Message Here">
             <button (click)="sendChat()">Send</button>
         </div>
     </div>
