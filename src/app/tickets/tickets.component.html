@@ -27,7 +27,9 @@
             }">
                 <p>{{message.messageBody}}</p>
                 <p style="text-decoration: underline;">Sent at: {{formatDate(message.timeStamp)}}</p>
+                <div *ngIf=message.incoming>
                 <a [routerLink]="'/map/' + encodeURIComponent(message.location)">See Location</a>
+                </div>
             </li>
         </ul>
         <div class="input">

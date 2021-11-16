@@ -4,20 +4,22 @@
       <!-- <div id='firebaseui-auth-container'>
 
       </div> -->
-      <h2 id="student">Welcome to SERS</h2>
-      <label for="uname"><b>Username: </b></label>
-      <input [(ngModel)]="usernameValue" id="username" placeholder="Enter Username" name="uname" required>
-      <br>
-      <label for="pwd"><b>Password: </b></label>
-      <input [(ngModel)]="passwordValue" id="password" type="password" placeholder="Enter Password" name="pwd" required>
-      <br>
-      <button type="submit" value='login' (click)="login()">Sign In</button>
+      <div class="loginForm">
+        <h2 id="student">Welcome to SERS</h2>
+        <label for="uname"><b>Username: </b></label>
+        <input [(ngModel)]="usernameValue" id="username" placeholder="Enter Username" name="uname" required>
+        <br>
+        <label for="pwd"><b>Password: </b></label>
+        <input [(ngModel)]="passwordValue" id="password" type="password" placeholder="Enter Password" name="pwd" required>
+        <br>
+        <button type="submit" value='login' (click)="login()">Sign In</button>
+      </div>
     </div>
 
     <div class="sidenav">
         <a class="navbar-brand" href="/">
           <div class="logo-image">
-                <img src="../assets/mu-tiger.png" class="img-fluid">
+                <img src="../assets/templogo.png" class="img-fluid">
           </div>
         </a>
     </div>

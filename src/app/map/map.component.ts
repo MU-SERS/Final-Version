@@ -14,7 +14,7 @@ export class MapComponent implements OnInit {
 
     const location = decodeURIComponent(this.activatedRoute.snapshot.params['location']);
     let lat = 38.9404;
-    let long = -92.3277;
+    let long = -90.3277;
 
     if (location) {
       let latlong = location.split(',');
@@ -26,12 +26,16 @@ export class MapComponent implements OnInit {
 
     const map = new google.maps.Map(document.getElementById("map"), {
       center: { lat: lat,lng: long},
-      zoom: 16,
+      zoom: 15,
       mapTypeId: "roadmap",
     });
+
+    console.log(location)
+
     // Create the search box and link it to the UI element.
     const input = document.getElementById("pac-input");
     var searchBox = new google.maps.places.SearchBox(input);
+
   
     // This was supposed to work?
     // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
@@ -39,6 +43,7 @@ export class MapComponent implements OnInit {
     // Bias the SearchBox results towards current map's viewport.
     map.addListener("bounds_changed", () => {
       searchBox.setBounds(map.getBounds());
+
     });
   
     let markers: any[] = [];
@@ -80,6 +85,7 @@ export class MapComponent implements OnInit {
           new google.maps.Marker({
             map,
             icon,
+            location: { lat: lat,lng: long},
             title: place.name,
             position: place.geometry.location,
           })
@@ -94,5 +100,4 @@ export class MapComponent implements OnInit {
       map.fitBounds(bounds);
     });
   }
-
 }

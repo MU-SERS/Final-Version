@@ -51,14 +51,14 @@ export class TicketsComponent implements OnInit {
     // this.afs.collection('Users')
     this.loadStudents();
 
-    this.afs.collection('messages').snapshotChanges().subscribe(data => {
-      this.studentList.forEach(s => s.messages = []);
-      data.forEach(m => {
-        const messageData = <Message>(m.payload.doc.data());
-        this.getStudentById(messageData.userID)?.messages.push(messageData);
-      });
-      this.studentList.forEach(s => s.messages.sort((b,a) => b.timeStamp - a.timeStamp));
-    });
+    // this.afs.collection('messages').snapshotChanges().subscribe(data => {
+    //   this.studentList.forEach(s => s.messages = []);
+    //   data.forEach(m => {
+    //     const messageData = <Message>(m.payload.doc.data());
+    //     this.getStudentById(messageData.userID)?.messages.push(messageData);
+    //   });
+    //   this.studentList.forEach(s => s.messages.sort((b,a) => b.timeStamp - a.timeStamp));
+    // });
 
     // this.afs.collection('Users', ref => ref.where('name', '<=', this.queryValue + '\uf8ff').orderBy('name').limit(10));
 
@@ -172,7 +172,6 @@ export class TicketsComponent implements OnInit {
 
   }
 }
-
 
 // class dataService {
 //     public getReports(): Observable<Report[]> {
