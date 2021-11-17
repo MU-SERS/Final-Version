@@ -85,7 +85,7 @@ export class MapComponent implements OnInit {
           new google.maps.Marker({
             map,
             icon,
-            location: { lat: lat,lng: long},
+            location,
             title: place.name,
             position: place.geometry.location,
           })
