@@ -10,9 +10,11 @@ main {
         flex: 1;
         background-color: steelblue;
         border: 1px solid black; 
+        width: 20%;
         .menuOptions {
             height: 100%;
             display: flex;
+            width: 30%;
             flex-direction: column;
             > div {
 
@@ -98,5 +100,15 @@ main {
         align-content: center;
     }
 
+    .mat-icon-button{
+        font-size: 0px;
+        height: 0px;
+        width:0px;
+        margin: 10%;
+    }
+    .mat-icon{
+        margin-top:10px;
+        font-size: 40px;
+    }
 
 

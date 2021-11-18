@@ -15,6 +15,9 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { IsReadService } from './is-read.service';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -30,6 +33,8 @@ import { IsReadService } from './is-read.service';
     AppRoutingModule,
     FormsModule,
     CommonModule,
+    MatIconModule,
+    MatButtonModule,
     RouterModule.forRoot(
       [
         { path: 'tickets', component: TicketsComponent },
@@ -40,6 +45,7 @@ import { IsReadService } from './is-read.service';
     ),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     AngularFirestore,

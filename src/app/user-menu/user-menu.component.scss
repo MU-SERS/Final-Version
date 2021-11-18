@@ -1,5 +1,9 @@
 :host {
+    
         position: relative;
+        .mat-icon{
+            font-size: 40px;
+        }
         .popover-menu {
             background-color: whitesmoke;
             z-index: 999;
@@ -27,5 +31,6 @@
             }
         
         }
+
     }
 }

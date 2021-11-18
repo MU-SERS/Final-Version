@@ -31,19 +31,19 @@
       <aside>
           <div class="menuOptions">
           <div>
-            <button class="nav-button" routerLink="/tickets">Chats</button>
+            <button  aria-label="chat" class="nav-button"  routerLink="/tickets" ><mat-icon>chat</mat-icon></button>
           </div>
           <div>
-            <button class="nav-button" routerLink="/map">Locate</button>
+            <button aria-label="map" class="nav-button" routerLink="/map"><mat-icon>map</mat-icon></button>
           </div>
           <div>
-            <button class="nav-button" routerLink="/reports">Reports</button>
+            <button aria-label="reports"  class="nav-button" routerLink="/reports"><mat-icon>assignment</mat-icon></button>
           </div>
           <div>
               <app-user-menu></app-user-menu>
           </div>
           <div>
-            <button class="nav-button" (click)="logout()">Logout</button>
+            <button  aria-label="logout" class="nav-button" (click)="logout()"><mat-icon>logout</mat-icon></button>
           </div>
           </div>
       </aside>
