@@ -18,8 +18,8 @@ export class MapComponent implements OnInit {
 
     if (location) {
       let latlong = location.split(',');
-      lat = +latlong[0];
-      long = +latlong[1];
+      lat =Number.parseFloat(latlong[0]) ;
+      long = Number.parseFloat(latlong[1]);
     }
 
     let google = (<any>window).google;
@@ -85,9 +85,9 @@ export class MapComponent implements OnInit {
           new google.maps.Marker({
             map,
             icon,
-            location,
+            position: new google.maps.LatLng(lat,long),
             title: place.name,
-            position: place.geometry.location,
+            //position: place.geometry.location,
           })
         );
         if (place.geometry.viewport) {
