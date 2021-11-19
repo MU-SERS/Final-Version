@@ -15,6 +15,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { IsReadService } from './is-read.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -23,10 +24,12 @@ import { IsReadService } from './is-read.service';
     TicketsComponent,
     MapComponent,
     ReportsComponent,
-    UserMenuComponent
+    UserMenuComponent,
+    [AppComponent]
   ],
   imports: [
     BrowserModule,
+    FontAwesomeModule,
     AppRoutingModule,
     FormsModule,
     CommonModule,
@@ -40,6 +43,7 @@ import { IsReadService } from './is-read.service';
     ),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    FontAwesomeModule,
   ],
   providers: [
     AngularFirestore,

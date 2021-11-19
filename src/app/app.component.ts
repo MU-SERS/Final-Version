@@ -2,6 +2,15 @@ import { ChangeDetectionStrategy } from '@angular/compiler/src/compiler_facade_i
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { faComments } from '@fortawesome/free-solid-svg-icons';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faFolder } from '@fortawesome/free-solid-svg-icons';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+
+
+
+
+
 
 const SESSION_COOKIE_MINUTES = 5;
 const SESSION_COOKIE_IDENTIFIER = 'name=session';
@@ -35,6 +44,10 @@ export class AppComponent {
   isLogin = true;
   usernameValue = '';
   passwordValue = '';
+  faComments = faComments;
+  faMapMarkerAlt = faMapMarkerAlt;
+  faFolder = faFolder;
+  faSignOutAlt = faSignOutAlt;
 
   constructor(private auth: AngularFireAuth, private router: Router,private _changeDetectorRef: ChangeDetectorRef) {
   

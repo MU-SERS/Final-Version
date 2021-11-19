@@ -19,7 +19,7 @@
     <div class="sidenav">
         <a class="navbar-brand" href="/">
           <div class="logo-image">
-                <img src="../assets/shield.png" class="img-fluid">
+                <img src="../assets/shield.png" class="img-fluid" alt="Silent Emergency Response System Logo">
           </div>
         </a>
     </div>
@@ -31,19 +31,19 @@
       <aside>
           <div class="menuOptions">
           <div>
-            <button class="nav-button" routerLink="/tickets">Chats</button>
+            <fa-icon class="nav-button" [icon]="faComments" routerLink="/tickets"></fa-icon>
           </div>
           <div>
-            <button class="nav-button" routerLink="/map">Locate</button>
+            <fa-icon class="nav-button" [icon]="faMapMarkerAlt" routerLink="/map">Locate</fa-icon>
           </div>
           <div>
-            <button class="nav-button" routerLink="/reports">Reports</button>
+            <fa-icon class="nav-button" [icon]="faFolder" routerLink="/reports">Reports</fa-icon>
           </div>
           <div>
               <app-user-menu></app-user-menu>
           </div>
           <div>
-            <button class="nav-button" (click)="logout()">Logout</button>
+            <fa-icon class="nav-button" [icon]="faSignOutAlt" (click)="logout()">Logout</fa-icon>
           </div>
           </div>
       </aside>

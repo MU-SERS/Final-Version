@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faUserShield } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-user-menu',
@@ -10,6 +12,9 @@ export class UserMenuComponent implements OnInit {
   public popoverOpen = false;
 
   public popover2Open = false;
+
+  faUserShield = faUserShield;
+
 
   constructor() { }
 
