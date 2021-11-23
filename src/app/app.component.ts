@@ -50,7 +50,7 @@ export class AppComponent {
   faSignOutAlt = faSignOutAlt;
 
   constructor(private auth: AngularFireAuth, private router: Router,private _changeDetectorRef: ChangeDetectorRef) {
-  
+
   }
 
   ngAfterViewInit(): void {

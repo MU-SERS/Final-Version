@@ -16,7 +16,13 @@ main {
             flex-direction: column;
             > div {
 
+                #mapicon {
+                    margin-left: 25px;
+                }
                 flex: 1;
+                fa-icon {
+                    transform: scale(2);
+                }
             }
         }
     }

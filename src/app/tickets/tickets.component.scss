@@ -45,6 +45,7 @@
             list-style-type: none;
             padding-bottom: 4%;
             margin-bottom: 4%;
+            border-radius: 15px 15px 15px 15px;
         }
     }
     .chat {
@@ -69,18 +70,21 @@
                 background-color: whitesmoke; 
                 padding-left: 4%;
                 padding-top: 1%;
-                margin-left: 2%;
+                margin-left: 10%;
                 margin-right: 0%;
                 list-style-type: none;
+                border-radius: 30px 30px 5px 30px;
                 padding: 4%;
                 margin-bottom: 4%;
 
                 &.recieved {
-                    background-color: darkgray;
-                    margin-right: 2%;
+                    background-color: steelblue;
+                    border: 1px solid black;
+                    margin-right: 10%;
                     margin-left: 0%;
                     padding: 4%;
-                    
+                    color: black;
+                    border-radius: 30px 30px 30px 5px;
                 }
 
             }

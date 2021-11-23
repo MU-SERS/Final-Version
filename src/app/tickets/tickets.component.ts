@@ -71,30 +71,6 @@ export class TicketsComponent implements OnInit {
     //   });
     // });
 
-    // this.messages = <Message[][]>data;
-    // var student = new Student();
-    // student.id = 'GC4E64NW8d7wiXp6sczp';
-    // student.name = 'User1';
-    // student.phone = '(123)456-7890';
-    // this.studentList.push(student);
-
-    // var student2 = new Student();
-    // student2.id = '2';
-    // student2.name = 'User2';
-    // student2.phone = '(123)456-7890+1';
-    // this.studentList.push(student2);
-
-    // var message = new Message(); 
-    // message.timeStamp = '10-17-1999';
-    // message.incoming = false;
-    // message.content = 'My friend is bleeding really badly my lat/long is 38.94,-92.32';
-    // this.messages[1] = [];
-    // this.messages[1].push(message);
-
-    // this._dataService.getReports().subcribe((response) => {
-    //   this.tipsList = response.data;
-    // })
-
   }
 
   ngOnInit(): void {
@@ -117,15 +93,6 @@ export class TicketsComponent implements OnInit {
       incoming: false,
     });
 
-
-    // sendQuery(): void {  
-    //   this.afs.collection('search').add({
-    //     search: this.queryValue,
-    //   });
-
-    // const newMessage = new Message();
-    // newMessage.messageBody = this.inputValue;
-    // this.getStudentById(<string>this.activeChat)?.messages.push(newMessage);
     this.inputValue = '';
   }
 

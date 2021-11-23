@@ -18,8 +18,8 @@
     </ul>
 </div>
 
-<div class="chat">
-    <div *ngIf="activeChat">
+<div class="chat" style="height: 100%; width: 100%;">
+    <div *ngIf="activeChat" style="height: 100%; width: 100%;">
         <ul>
             <li class="chatMessages" *ngFor="let message of getStudentById(activeChat)?.messages"
             [ngClass]="{
@@ -27,8 +27,8 @@
             }">
                 <p>{{message.messageBody}}</p>
                 <p style="text-decoration: underline;">Sent at: {{formatDate(message.timeStamp)}}</p>
-                <div *ngIf=message.incoming>
-                <a [routerLink]="'/map/' + encodeURIComponent(message.location)">See Location</a>
+                <div *ngIf="message.location && message.location.length">
+                <a [routerLink]="'/map/' + encodeURIComponent(message.location)" style="color: darkblue;">Visit Location</a>
                 </div>
             </li>
         </ul>

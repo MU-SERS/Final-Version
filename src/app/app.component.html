@@ -29,26 +29,26 @@
 <ng-template #home>
   <main>
       <aside>
-          <div class="menuOptions">
-          <div>
-            <fa-icon class="nav-button" [icon]="faComments" routerLink="/tickets"></fa-icon>
-          </div>
-          <div>
-            <fa-icon class="nav-button" [icon]="faMapMarkerAlt" routerLink="/map">Locate</fa-icon>
-          </div>
-          <div>
-            <fa-icon class="nav-button" [icon]="faFolder" routerLink="/reports">Reports</fa-icon>
-          </div>
-          <div>
-              <app-user-menu></app-user-menu>
-          </div>
-          <div>
-            <fa-icon class="nav-button" [icon]="faSignOutAlt" (click)="logout()">Logout</fa-icon>
-          </div>
+          <div class="menuOptions" style="height: 100%; width: 100%;">
+            <div>
+              <fa-icon class="nav-button" [icon]="faComments" routerLink="/tickets"></fa-icon>
+            </div>
+            <div>
+              <fa-icon id="mapicon" class="nav-button" [icon]="faMapMarkerAlt" routerLink="/map">Locate</fa-icon>
+            </div>
+            <div>
+              <fa-icon class="nav-button" [icon]="faFolder" routerLink="/reports">Reports</fa-icon>
+            </div>
+            <div>
+                <app-user-menu></app-user-menu>
+            </div>
+            <div>
+              <fa-icon class="nav-button" [icon]="faSignOutAlt" (click)="logout()">Logout</fa-icon>
+            </div>
           </div>
       </aside>
     
-      <div>
+      <div style="height: 100%; width: 100%;">
         <router-outlet></router-outlet>
       </div>
   </main>

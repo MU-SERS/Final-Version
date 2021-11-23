@@ -1,4 +1,7 @@
 :host {
+    fa-icon {
+        transform: scale(2);
+    }
         position: relative;
         .popover-menu {
             background-color: whitesmoke;
@@ -10,8 +13,8 @@
             
             &.active {
                 position: fixed;
-                left: 93px;
-                bottom: 170px;
+                left: 62px;
+                bottom: 190px;
                 width: 140px;
                 height: 140px;
                 border: 1px solid black;
@@ -24,6 +27,8 @@
             .helpOpen {
                 margin-left: 64%;
                 margin-bottom: auto;
+                background-color: steelblue;
+                color: whitesmoke;
             }
         
         }

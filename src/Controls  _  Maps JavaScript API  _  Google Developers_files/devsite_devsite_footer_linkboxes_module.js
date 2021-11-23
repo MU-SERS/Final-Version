@@ -1,0 +1,1 @@
+(function(_ds){var window=this;var gQ=class extends _ds.D{Ta(a){a&&_ds.Mg(this,this.querySelector("nav"),a.querySelector("nav"))}};gQ.prototype.updateContent=gQ.prototype.Ta;try{window.customElements.define("devsite-footer-linkboxes",gQ)}catch(a){console.warn("Unrecognized DevSite custom element - DevsiteFooterLinkboxes",a)};})(_ds_www);
