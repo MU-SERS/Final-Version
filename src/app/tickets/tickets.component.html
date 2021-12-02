@@ -1,7 +1,7 @@
 <div class="tickets">
     <div>
         <input id="queryBox" type="text" [(ngModel)]="queryValue" placeholder="Filter on Username">
-        <button (click)="sendQuery()">Search</button>
+        <label for= "queryBox"><button (click)="sendQuery()">Search</button></label>
     </div>
     <ul>
         <li class="texts" *ngFor="let student of studentList">
@@ -34,7 +34,7 @@
         </ul>
         <div class="input">
             <input id="textBox" type="text" [(ngModel)]="inputValue" placeholder="Enter Message Here">
-            <button (click)="sendChat()">Send</button>
+            <label for="textBox"><button (click)="sendChat()">Send</button></label>
         </div>
     </div>
 </div>

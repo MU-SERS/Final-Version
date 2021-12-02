@@ -2,7 +2,12 @@ $fa-font-path: "../node_modules/@fortawesome/fontawesome-free/webfonts";
 main {
     background-image: url('../assets/sersbackdrop.jpeg');
     background-repeat: no-repeat;
+    //background-size: 100%;
+    background-size: 100vw 100vh;
+    max-width: 100%;
+    
     height: 100%;
+    
     display: flex;
     > * {
         height: 100%;
@@ -48,6 +53,9 @@ main {
     body {
         background-image: url('../assets/sersbackdrop.jpeg');
         background-repeat: no-repeat;
+        background-size: 100vw 100vh;
+        width: 82.5%;
+        max-width: 100%;
         height: 100%;
     }
     
@@ -84,6 +92,7 @@ main {
     .sidenav {
       height: 100%;
       width: 17.5%;
+      max-width: 20vw;
       position: fixed;
       z-index: 1;
       top: 0;
@@ -95,14 +104,167 @@ main {
   }
     
      .logo-image{
-        width: 250px;
-        height: 250px;
+        width: 20vw;
+        height: 30vh;
         overflow: hidden;
         margin-top: -6px;
+        margin-left: -20px;
         z-index: 2;
         display: block;
         align-content: center;
     }
-
+    /* Smartphones (portrait and landscape) ----------- */
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        /* Styles */
+        body{
+            max-width: 100%;
+            width: 100%;
+        }
+        .sidenav{
+            width: 17.5%;
+            max-width: 17.5%;
+        }
+        }
+        
+        /* Smartphones (landscape) ----------- */
+        @media only screen and (min-width : 321px) {
+        /* Styles */
+        body{
+            max-width: 100%;
+            width: 100%;
+        }
+        .sidenav{
+            width: 17.5%;
+            max-width: 17.5%;
+        }
+        }
+        
+        /* Smartphones (portrait) ----------- */
+        @media only screen and (max-width : 320px) {
+        /* Styles */
+        body{
+            max-width: 100%;
+            width: 100%;
+        }
+        .sidenav{
+            width: 17.5%;
+            max-width: 17.5%;
+        }
+        }
+        
+        /* iPads (portrait and landscape) ----------- */
+        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+        /* Styles */
+        body{
+            max-width: 100%;
+            width: 100%;
+        }
+        .sidenav{
+            width: 17.5%;
+            max-width: 17.5%;
+        }
+        }
+        
+        /* iPads (landscape) ----------- */
+        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+        /* Styles */
+        body{
+            max-width: 100%;
+            width: 100%;
+        }
+        .sidenav{
+            width: 17.5%;
+            max-width: 17.5%;
+        }
+        }
+        
+        /* iPads (portrait) ----------- */
+        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+        /* Styles */
+        body{
+            max-width: 100%;
+            width: 100%;
+        }
+        .sidenav{
+            width: 17.5%;
+            max-width: 17.5%;
+        }
+        }
+        /**********
+        iPad 3
+        **********/
+        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+        /* Styles */
+        body{
+            max-width: 100%;
+            width: 100%;
+        }
+        .sidenav{
+            width: 17.5%;
+            max-width: 17.5%;
+        }
+        }
+        
+        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+        /* Styles */
+        body{
+            max-width: 100%;
+            width: 100%;
+        }
+        .sidenav{
+            width: 17.5%;
+            max-width: 17.5%;
+        }
+        }
+        /* Desktops and laptops ----------- */
+        @media only screen  and (min-width : 1224px) {
+        /* Styles */
+        body{
+            max-width: 100%;
+            width: 100%;
+        }
+        .sidenav{
+            width: 17.5%;
+            max-width: 17.5%;
+        }
+        }
+        
+        /* Large screens ----------- */
+        @media only screen  and (min-width : 1824px) {
+        /* Styles */
+        body{
+            max-width: 100%;
+            width: 100%;
+        }
+        .sidenav{
+            width: 17.5%;
+            max-width: 17.5%;
+        }
+        }
+        
+        /* iPhone 4 ----------- */
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+        /* Styles */
+        body{
+            max-width: 100%;
+            width: 100%;
+        }
+        .sidenav{
+            width: 17.5%;
+            max-width: 17.5%;
+        }
+        }
+        
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+        /* Styles */
+        body{
+            max-width: 100%;
+            width: 100%;
+        }
+        .sidenav{
+            width: 17.5%;
+            max-width: 17.5%;
+        }
+        }
 
 
