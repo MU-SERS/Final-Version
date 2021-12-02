@@ -48,10 +48,12 @@ export class AppComponent {
   faMapMarkerAlt = faMapMarkerAlt;
   faFolder = faFolder;
   faSignOutAlt = faSignOutAlt;
+  hide = true;
 
   constructor(private auth: AngularFireAuth, private router: Router,private _changeDetectorRef: ChangeDetectorRef) {
 
   }
+
 
   ngAfterViewInit(): void {
     
@@ -108,6 +110,8 @@ export class AppComponent {
   private _enablePopovers(): void {
     this._changeDetectorRef.detectChanges();
   }
+
+  
 
   
 

@@ -16,6 +16,14 @@ import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/f
 import { AngularFireModule } from '@angular/fire/compat';
 import { IsReadService } from './is-read.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 @NgModule({
@@ -25,6 +33,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MapComponent,
     ReportsComponent,
     UserMenuComponent,
+  
     [AppComponent]
   ],
   imports: [
@@ -33,6 +42,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppRoutingModule,
     FormsModule,
     CommonModule,
+    MatIconModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatDialogModule,
+    
     RouterModule.forRoot(
       [
         { path: 'tickets', component: TicketsComponent },
@@ -44,6 +59,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     FontAwesomeModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     AngularFirestore,

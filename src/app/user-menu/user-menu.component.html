@@ -1,27 +1,32 @@
+
+   
 <fa-icon
-    [icon]="faUserShield"
-    type="button"
-    class="nav-button"
-    (click)="showMenu()"
+[icon]="faUserShield"
+type="button"
+class="nav-button"
+(click)="showMenu()"
 >User</fa-icon>
 <div
-    class="popover-menu"
-    [ngClass]="{'active': popoverOpen}"
+class="popover-menu"
+[ngClass]="{'active': popoverOpen}"
 >
-    <div
-    class="popover-menu2"
-    [ngClass]="{'active2': popover2Open}"
-    >
-        <div>
-            <button class="menuClose"
-            (click)="closeMenu()"
-            >X</button>
-            <p>Current User:</p>
-            <p>Dispatch</p>
+<div
+class="popover-menu2"
+[ngClass]="{'active2': popover2Open}"
+>
+<div>
+    <mat-card>
+    <button class="menuClose"
+    (click)="closeMenu()" mat-button
+    ><mat-icon>close</mat-icon></button>
+    <mat-card-subtitle><mat-icon>account_circle</mat-icon>Current User:</mat-card-subtitle>
+    <mat-card-title>Dispatch</mat-card-title>
+    <button class="helpOpen"
+    (click)="helpMenu()" mat-button
+    >Help<mat-icon>help</mat-icon></button>
+    </mat-card>
 
-            <button class="helpOpen"
-            (click)="helpMenu()"
-            >Help</button>
-        </div>
-    </div>
+    
+</div>
+</div>
 </div>

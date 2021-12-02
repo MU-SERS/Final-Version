@@ -13,10 +13,11 @@
         <label for="username"><b>Username: </b></label>
         <input [(ngModel)]="usernameValue" id="username" placeholder="Enter Username" name="uname" required>
         <br>
+
         <label for="password"><b>Password:</b>  </label>
         <input [(ngModel)]="passwordValue" id="password" type="password" placeholder="Enter Password" name="pwd" required>
         <br>
-        <button type="submit" value='login' (click)="login()">Sign In</button>
+        <button type="submit" value='login' (click)="login()"  mat-button>Signin<mat-icon>verified_user</mat-icon></button>
         
 
       </div>

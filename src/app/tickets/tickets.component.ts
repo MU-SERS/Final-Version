@@ -5,6 +5,9 @@ import { Observable, of, Subscription } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/compat/firestore'
 import { IsReadService } from '../is-read.service';
 import { query } from '@angular/fire/firestore';
+import {MatIconModule} from '@angular/material/icon';
+
+
 
 class Student { 
   id: string = '';

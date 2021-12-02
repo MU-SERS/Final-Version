@@ -6,6 +6,7 @@
         .popover-menu {
             background-color: whitesmoke;
             z-index: 999;
+            border-radius: 30px;
             
             &:not(.active) {
                 display: none;
@@ -13,22 +14,32 @@
             
             &.active {
                 position: fixed;
-                left: 62px;
-                bottom: 190px;
+                margin-left: 6vh;
+                margin-bottom: 7vh;
+
                 width: 140px;
                 height: 140px;
                 border: 1px solid black;
-                box-shadow: darkgrey 1px 1px 1px 1px;
+                border-radius: 30px;
+                //box-shadow: darkgrey 1px 1px 1px 1px;
             }
         .popover-menu2 {
             background-color: whitesmoke;
             z-index: 1000;
 
             .helpOpen {
-                margin-left: 64%;
+                margin-left: 2vh;
                 margin-bottom: auto;
                 background-color: steelblue;
                 color: whitesmoke;
+            }
+            .menuClose{
+                margin-left: 5vh;
+            }
+            mat-card{
+                background-color: whitesmoke;
+                
+
             }
         
         }
