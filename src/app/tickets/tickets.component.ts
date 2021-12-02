@@ -135,6 +135,8 @@ export class TicketsComponent implements OnInit {
         data.forEach(m => {
           const messageData = <Message>(m.payload.doc.data());
           this.getStudentById(messageData.userID)?.messages.push(messageData);
+          //const audio = new Audio("./src/assets/sound.wav");
+          //audio.play();
         });
         this.studentList.forEach(s => s.messages.sort((b,a) => b.timeStamp - a.timeStamp));
       });

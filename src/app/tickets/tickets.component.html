@@ -7,7 +7,7 @@
         <li class="texts" *ngFor="let student of studentList">
             <p>From: {{student.name}}</p>
             <p>Device: {{student.number}}</p>
-            <button
+            <button 
                 [ngClass]="{
                     'unvisited': irs.readTickets.indexOf(student.id) === -1,
                     'active': student.id === activeChat
@@ -33,8 +33,10 @@
             </li>
         </ul>
         <div class="input">
-            <input id="textBox" type="text" [(ngModel)]="inputValue" placeholder="Enter Message Here">
+            <input matInput id="textBox" type="text" [(ngModel)]="inputValue" placeholder="Please enter message here.">
+    
             <label for="textBox"><button (click)="sendChat()" mat-icon-button><mat-icon>send</mat-icon></button></label>
+            <mat-hint><h3>Please remain calm and send help on the way as soon as possible.</h3></mat-hint>
         </div>
     </div>
 </div>
