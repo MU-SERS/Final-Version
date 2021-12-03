@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { faComments } from '@fortawesome/free-solid-svg-icons';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
 import { faFolder } from '@fortawesome/free-solid-svg-icons';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -45,7 +46,7 @@ export class AppComponent {
   usernameValue = '';
   passwordValue = '';
   faComments = faComments;
-  faMapMarkerAlt = faMapMarkerAlt;
+  faLocationArrow = faLocationArrow;
   faFolder = faFolder;
   faSignOutAlt = faSignOutAlt;
   hide = true;

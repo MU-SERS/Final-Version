@@ -39,19 +39,29 @@
       <aside>
           <div class="menuOptions" style="height: 100%; width: 100%;">
             <div>
-              <fa-icon class="nav-button" [icon]="faComments" routerLink="/tickets"></fa-icon>
+             <button mat-button> <fa-icon class="nav-button" [icon]="faComments" routerLink="/tickets"></fa-icon></button>
+              <mat-label>Chat</mat-label>
             </div>
             <div>
-              <fa-icon id="mapicon" class="nav-button" [icon]="faMapMarkerAlt" routerLink="/map">Locate</fa-icon>
+              <button mat-button><fa-icon id="mapicon" class="nav-button" [icon]="faLocationArrow" routerLink="/map">Locate</fa-icon></button>
+              <mat-label>Mapbox</mat-label>
             </div>
+            
+      
             <div>
-              <fa-icon class="nav-button" [icon]="faFolder" routerLink="/reports">Reports</fa-icon>
+              <button mat-button><fa-icon class="nav-button" [icon]="faFolder" routerLink="/reports">Reports</fa-icon></button>
+              <mat-label>Reports</mat-label>
             </div>
             <div>
                 <app-user-menu></app-user-menu>
             </div>
             <div>
-              <fa-icon class="nav-button" [icon]="faSignOutAlt" (click)="logout()">Logout</fa-icon>
+              <button mat-button><fa-icon class="nav-button" [icon]="faSignOutAlt" (click)="logout()">Logout</fa-icon></button>
+              <mat-label>Signout</mat-label>
+            </div>
+            <div class="logo">
+              <img src="../assets/logo.png" class="img-fluid" alt="Silent Emergency Response System Logo">
+
             </div>
           </div>
       </aside>

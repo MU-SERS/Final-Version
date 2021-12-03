@@ -21,10 +21,8 @@ main {
             flex-direction: column;
             > div {
 
-                #mapicon {
-                    margin-left: 25px;
-                }
-                flex: 1;
+                
+                //flex: 1;
                 fa-icon {
                     transform: scale(2);
                 }
@@ -112,6 +110,29 @@ main {
         z-index: 2;
         display: block;
         align-content: center;
+    }
+    fa-icon{
+        color:black;
+    }
+    mat-label{
+        
+        margin-left: 2vh;
+    }
+
+    .logo{
+        position: absolute;
+        margin-top: 70%;
+        overflow: hidden;
+        display: flex;
+        width: 50px;  
+        height: 10vh;
+        margin-left: 1%;
+        padding-left:2px ;
+        overflow: hidden;
+        transform: scale(2);
+        display: block;
+        align-content: center;
+
     }
     /* Smartphones (portrait and landscape) ----------- */
     @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {

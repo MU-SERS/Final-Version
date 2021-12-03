@@ -1,11 +1,12 @@
 
    
-<fa-icon
+<button mat-button><fa-icon
 [icon]="faUserShield"
 type="button"
 class="nav-button"
 (click)="showMenu()"
->User</fa-icon>
+>User</fa-icon></button>
+<mat-label>User</mat-label>
 <div
 class="popover-menu"
 [ngClass]="{'active': popoverOpen}"
