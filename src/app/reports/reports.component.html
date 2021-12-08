@@ -1,13 +1,13 @@
 <div class="tips">
     <div>
-        <h1></h1>
+       
         <input id="queryBox" type="text" [(ngModel)]="queryValue" placeholder="Filter on Date">
         <label for= "queryBox"><button (click)="sendQuery()" id="searchbutton">Search</button></label>
 
     </div>
         <ul>
         <li class="tipsList" *ngFor="let tip of reportList; let $index = index">
-            <p>From: Anonymous</p>
+            <H1>From: Anonymous</H1>
             <p>Date: {{tip.date}}</p>
             <button 
             [ngClass]="{

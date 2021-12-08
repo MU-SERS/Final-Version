@@ -22,14 +22,14 @@
         
 
       </div>
-      <div class="bglogo"><img src="../assets/bg.png" alt="logo" style="bottom: 0; right: 0; position: fixed; height: 15vh; width: 30vw;"></div>
+      <div class="bglogo"><img src="../assets/bg.png" alt="SERS brand photo" style="bottom: 0; right: 0; position: fixed; height: 15vh; width: 30vw;"></div>
   
     </div>
 
     <div class="sidenav">
         <a class="navbar-brand" href="/">
           <div class="logo-image">
-                <img src="../assets/shield.png" class="img-fluid" alt="Silent Emergency Response System Logo">
+                <img src="../assets/shield.png" class="img-fluid" alt="SERS brand">
           </div>
         </a>
     </div>
@@ -37,34 +37,35 @@
 </ng-container>
 
 <ng-template #home>
+  
   <main>
-    <div class="bglogo"><img src="../assets/bg.png" alt="logo" style="bottom: 0; right: 0; position:fixed; z-index: 1; height: 15vh; width: 30vw;"></div>
+    <div class="bglogo"><img src="../assets/bg.png" alt="SERS" style="bottom: 0; right: 0; position:fixed; z-index: 1; height: 15vh; width: 30vw;"></div>
   
       <aside>
           <div class="menuOptions" style="height: 100%; width: 100%;">
             <div>
-             <button mat-button> <fa-icon class="nav-button" [icon]="faComments" routerLink="/tickets"></fa-icon></button>
+             <button mat-button> <fa-icon class="nav-button" [icon]="faComments" routerLink="/tickets" aria-label="chat button">Chat</fa-icon><span class="buttontext">Chat</span></button>
               <mat-label> <span style="display:inline-block; width: 50px;">Chat</span></mat-label>
             </div>
             <div>
-              <button mat-button><fa-icon id="mapicon" class="nav-button" [icon]="faLocationArrow" routerLink="/map">Locate</fa-icon></button>
+              <button mat-button><fa-icon id="mapicon" class="nav-button" aria-label="chat button" [icon]="faLocationArrow" routerLink="/map">Locate</fa-icon><span class="buttontext">Location</span></button>
               <mat-label>Location</mat-label>
             </div>
             
       
             <div>
-              <button mat-button><fa-icon class="nav-button" [icon]="faFolder" routerLink="/reports">Reports</fa-icon></button>
+              <button mat-button><fa-icon class="nav-button" aria-label="chat button" [icon]="faFolder" routerLink="/reports">Reports</fa-icon><span class="buttontext">Reorts</span></button>
               <mat-label>Reports</mat-label>
             </div>
             <div>
                 <app-user-menu></app-user-menu>
             </div>
             <div>
-              <button mat-button><fa-icon class="nav-button" [icon]="faSignOutAlt" (click)="logout()">Logout</fa-icon></button>
+              <button mat-button><fa-icon class="nav-button" aria-label="chat button" [icon]="faSignOutAlt" (click)="logout()">Logout</fa-icon><span class="buttontext">Logout</span></button>
               <mat-label>Signout</mat-label>
             </div>
             <div class="logo">
-              <img src="../assets/logo.png" class="img-fluid" alt="Silent Emergency Response System Logo">
+              <h1><img src="../assets/logo.png" class="img-fluid" alt="SERS brand"></h1>
 
             </div>
           </div>
@@ -73,5 +74,6 @@
       <div style="height: 100%; width: 100%;">
         <router-outlet></router-outlet>
       </div>
+      
   </main>
 </ng-template>
