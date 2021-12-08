@@ -55,6 +55,7 @@
     }
     .chat {
         height: 100%;
+        z-index: 999;
         > div {
             width: 98%; 
             border: 1px solid black; 
@@ -90,6 +91,9 @@
                     padding: 4%;
                     color: black;
                     border-radius: 30px 30px 30px 5px;
+                }
+                .bglogo{
+                    z-index: -1;
                 }
 
             }

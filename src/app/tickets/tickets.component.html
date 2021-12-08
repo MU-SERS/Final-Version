@@ -19,7 +19,7 @@
     </ul>
 </div>
 
-<div class="chat" style="height: 100%; width: 100%;">
+<div class="chat" style="height: 100%; width: 100%; z-index: 999;">
     <div *ngIf="activeChat" style="height: 100%; width: 100%;">
         <ul>
             <li class="chatMessages" *ngFor="let message of getStudentById(activeChat)?.messages"
