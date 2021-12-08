@@ -2,7 +2,7 @@
     <div>
         
         <input id="queryBox" type="text" [(ngModel)]="queryValue" placeholder="Filter on Username">
-        <label for= "queryBox"><button (click)="sendQuery()">Search</button></label>
+        <label for= "queryBox"><button class="searchbutton" (click)="sendQuery()">Search</button></label>
     </div>
     <ul>
         <li class="texts" *ngFor="let student of studentList">
@@ -14,7 +14,7 @@
                     'active': student.id === activeChat
                 }"
                 (click)="openChat(student.id)"
-            >Go 2 chat</button>
+            >Chatroom</button>
         </li>
     </ul>
 </div>
@@ -37,7 +37,7 @@
             <input matInput id="textBox" type="text" [(ngModel)]="inputValue" placeholder="Please enter message here.">
     
             <label for="textBox"><button (click)="sendChat()" mat-icon-button><mat-icon>send</mat-icon></button></label>
-            <mat-hint><h3>Please remain calm and send help on the way as soon as possible.</h3></mat-hint>
+            
         </div>
     </div>
 </div>

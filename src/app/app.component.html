@@ -4,6 +4,7 @@
       <!-- <div id='firebaseui-auth-container'>
 
       </div> -->
+      
       <div class="logobox">
 
     </div>
@@ -21,6 +22,7 @@
         
 
       </div>
+      <div class="bglogo"><img src="../assets/bg.png" alt="logo" style="bottom: 0; right: 0; position: fixed; height: 15vh; width: 30vw;"></div>
   
     </div>
 
@@ -36,15 +38,17 @@
 
 <ng-template #home>
   <main>
+    <div class="bglogo"><img src="../assets/bg.png" alt="logo" style="bottom: 0; right: 0; position:fixed; z-index: 1; height: 15vh; width: 30vw;"></div>
+  
       <aside>
           <div class="menuOptions" style="height: 100%; width: 100%;">
             <div>
              <button mat-button> <fa-icon class="nav-button" [icon]="faComments" routerLink="/tickets"></fa-icon></button>
-              <mat-label>Chat</mat-label>
+              <mat-label> <span style="display:inline-block; width: 50px;">Chat</span></mat-label>
             </div>
             <div>
               <button mat-button><fa-icon id="mapicon" class="nav-button" [icon]="faLocationArrow" routerLink="/map">Locate</fa-icon></button>
-              <mat-label>Mapbox</mat-label>
+              <mat-label>Location</mat-label>
             </div>
             
       

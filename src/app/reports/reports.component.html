@@ -2,7 +2,7 @@
     <div>
         <h1></h1>
         <input id="queryBox" type="text" [(ngModel)]="queryValue" placeholder="Filter on Date">
-        <label for= "queryBox"><button (click)="sendQuery()">Search</button></label>
+        <label for= "queryBox"><button (click)="sendQuery()" id="searchbutton">Search</button></label>
 
     </div>
         <ul>
@@ -14,13 +14,13 @@
                 'unvisited': irs.readReports.indexOf(tip.id) === -1,
                 'active': tip === activeTip
             }"
-            (click)="openTip($index)">Go 2 report</button>
+            (click)="openTip($index)">View report</button>
         </li>
         </ul>
 </div>
 
 <div class="report-wrapper" style="height: 100%; width: 100%;">
-    <div class="report" style="height: 100%;" *ngIf="activeTip">
+    <div class="report" style="height: 100%; z-index: 999;" *ngIf="activeTip">
         <div class="reportFormat">
             <button style="float: right; background-color: steelblue;" (click)="downloadRepo(activeTip)">Download</button>
             <p>Title:</p>

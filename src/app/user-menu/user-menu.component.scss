@@ -9,8 +9,9 @@
     }
         position: relative;
         .popover-menu {
-            background-color: white;
+            //background-color: rgba(224, 224, 224, 0.4);
             z-index: 999;
+           display: flex;
             
             
             &:not(.active) {
@@ -18,33 +19,45 @@
             }
             
             &.active {
-                position: fixed;
-                margin-left: 6vh;
-                margin-bottom: 7vh;
 
+                position: absolute;
+                //margin-top: 40vh;
+                
+
+                margin-left: 10vh;
+                text-align: center;
                 width: 140px;
                 height: 140px;
-                border: 1px solid black;
-                border-radius: 30px;
-                box-shadow: darkgrey 1px 1px 1px 1px;
+                //box-shadow: 8px 15px darkgrey;
+                border-style: 1px black;
+                //margin-bottom: 50%;
+
+                
             }
         .popover-menu2 {
-            background-color: whitesmoke;
+            //background-color:rgba(224, 224, 224, 0.4); ;
             z-index: 1000;
+            margin-bottom: 50%;
 
             .helpOpen {
-                margin-left: 2vh;
+                //margin-left: 2vh;
                 margin-bottom: auto;
-                background-color: steelblue;
+                background-color: #000;
                 color: whitesmoke;
             }
             .menuClose{
                 margin-left: 5vh;
             }
             mat-card{
-                background-color:whitesmoke;
+                background-color:lightgrey ;
+                border: black;
+                width: auto;
+                height: auto;
+                position: fixed;
+                top: 288px;
                 
 
+                box-shadow: 4px 4px 3px steelblue;
             }
             fa-icon{
                 color:black;
