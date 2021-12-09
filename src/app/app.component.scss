@@ -48,11 +48,15 @@ main {
         flex: 4;
         background-color: darkgrey;
     }
+     
+         
+         
+     }
     .chatComponent{
         border-left: 1px solid black;
         border-right: 1px solid black;
     }
-}
+
     body {
         background-image: url('../assets/sersbackdrop.jpeg');
         background-repeat: no-repeat;
@@ -87,7 +91,7 @@ main {
             margin-right: 33.5%;
             height: auto;
             border: 2px solid black;
-            background-color: rgba(224, 224, 224, 0.4);
+            background-color: rgba(224, 224, 224, 0.5);
             text-align: center;
         }
     }
@@ -114,6 +118,7 @@ main {
         display: block;
         align-content: center;
     }
+    
     fa-icon{
         color:black;
     }

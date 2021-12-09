@@ -32,7 +32,9 @@ class Query {
 @Component({
   selector: 'app-tickets',
   templateUrl: './tickets.component.html',
-  styleUrls: ['./tickets.component.scss']
+  styleUrls: ['./tickets.component.scss', '../app.component.scss']
+  
+
 })
 export class TicketsComponent implements OnInit {
 
